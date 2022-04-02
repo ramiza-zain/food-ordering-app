@@ -1,5 +1,25 @@
 .containerLeft {
-    background-color: #3cc274;
-    height: inherit;
-    min-width: 20%
+  background-color: #3cc274;
+  height: inherit;
+  min-width: 20%;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border-left: 100px; */
+  gap: 10px;
+  background-color: #ededed;
+  margin-top: 45%;
+  height: 30px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+.menuText {
+  color: #3cc274;
+  font-size: small;
 }
