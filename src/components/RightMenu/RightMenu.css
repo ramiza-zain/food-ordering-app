@@ -1,0 +1,181 @@
+.containerRight {
+    background-color: #ffffff;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0px 60px 0px;
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleText {
+    font-size: large;
+    font-weight: bold;
+    color: black;
+}
+
+.editButton {
+    color: #3cc274;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.timeContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+    font-size: smaller;
+}
+
+.clockIconContainer {
+ background: #CCFF90;
+ width: 25px;
+ height: 25px;
+ border-radius: 6px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.spacingLine {
+    height: 65px;
+    border-bottom: 1px solid rgb(192, 191, 191);
+    width: 100%;
+}
+
+.selectedFoodsContainer {
+
+}
+
+.selectedFoods {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px 20px 0px;
+}
+
+.foodItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+}
+
+.foodImage {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    background-color: #ffffff;
+    border-radius: 100px;
+    box-shadow: 1px 1px 1px 1px #efefef;
+
+}
+
+.foodName {
+    padding: 0px;
+    margin: 0px;
+}
+
+.weight {
+    color: #999;
+    font-size: 10px;
+    padding: 0px;
+    margin: 5px 0px 0px 0px;
+}
+
+.qtyContainer {
+    border: 0.4px solid #3cc274;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px;
+    margin: 0px;
+    border-radius: 100px;
+    height: 6px;
+}
+
+.countActionsButton {
+    height: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.priceDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+}
+
+.price {
+    font-size: 10px;
+}
+
+.delete {
+    font-size: 10px;
+    color: #888888;
+}
+
+.dragDrop {
+    color: #3cc274;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    background: #eaf5ef;
+    border: 1px dashed #3cc274;
+    font-size: small;
+}
+
+.totalAmount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.totalAmount p{
+    font-size: small;
+    
+}
+.totalAmount h5{
+    font-size: small;
+    
+}
+
+.checkoutButton {
+    cursor: pointer;
+    color: #eaf5ef;
+    background: #3cc274;
+    text-align: center;
+    border-radius: 100px;
+    font-size: smaller;
+    padding: 6px 0px 6px 0px
+    
+}
+

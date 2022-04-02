@@ -1,0 +1,142 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.contentMenu {
+    min-width: 60%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 25px
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.filterButton {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 0.4px solid #dee2de;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: x-small;
+    height: 10px;
+    padding: 4px 10px 4px 10px;
+}
+
+.sortContainer {
+    width: fit-content;
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: x-small;
+    height: 10px;
+    padding: 30px 10px 4px 10px;
+
+}
+
+.foodsList {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    margin: 0px
+}
+
+.listFoodItem {
+    border-radius: 5px;
+    width: 29%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 6px;
+    display: flex;
+    /* margin: 5px 0px -9px 0px; */
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.ratingHeartContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+.ratingContainer {
+    background: black;
+    color: #ededed;
+    width: 35px;
+   height: 22px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    border-radius: 100px;
+    font-size: x-small;
+    gap: 4px;
+}
+
+.heartContainer {
+    background: #ededed;
+   width: 22px;
+   height: 22px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.imageContainer {
+ border-radius: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imageView {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    box-shadow: 1px 1px 1px 1px #efefef;
+
+}
+
+.nameWeightDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px
+}
+.nameWeightDiv p{
+    font-size: 12px;
+    height: 10px
+}
+
+.nameWeightDiv span{
+    background-color: #ededed;
+    font-size: 8px;
+    padding: 3px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+.priceStyle {
+    font-size: 12px;
+    height: 10px;
+    margin-top: -5px;
+}
