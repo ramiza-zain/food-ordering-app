@@ -1,43 +1,9 @@
 import React, { useState } from "react";
 import "./RightMenu.css";
 import { AiFillClockCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
-function RightMenu() {
-  const [slectedFoods, setSelectedFoods] = useState([
-    {
-      foodImage:
-        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2021%2F10%2F22%2Fpasta-and-white-bean-soup.jpg&q=60",
-      foodName: "Bean Soup",
-      weight: "350g",
-      quantity: 1,
-      price: 4.2,
-      rating: 4.9,
-      isSelected: true,
-      color:'#c2f8c4'
-    },
-    {
-      foodImage:
-        "https://www.funfoodfrolic.com/wp-content/uploads/2020/07/Noodle-Salad-Thumbnail.jpg",
-      foodName: "Noodle Salad",
-      weight: "300g",
-      quantity: 1,
-      price: 6.3,
-      rating: 4.5,
-      isSelected: true,
-      color: '#f8e2c0'
-    },
-    {
-      foodImage:
-        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2021%2F10%2F22%2Fpasta-and-white-bean-soup.jpg&q=60",
-      foodName: "Roast Potatoes",
-      weight: "300g",
-      quantity: 1,
-      price: 4.99,
-      rating: 4.4,
-      isSelected: true,
-      color: '#faeda6'
-    },
-  ]);
+function RightMenu({ selectedFoods }) {
   return (
     <div className="containerRight">
       <div className="titleContainer">
@@ -56,9 +22,9 @@ function RightMenu() {
 
       <div className="selectedFoodsContainer">
         <div className="selectedFoods">
-          {slectedFoods.map((food, index) => {
+          {selectedFoods.map((food, index) => {
             return (
-              <div className="foodItem">
+              <div className="foodItem" key={index}>
                 <div className="row">
                   <img className="foodImage" src={food.foodImage} />
                   <div className="column">
@@ -86,12 +52,14 @@ function RightMenu() {
 
       <div className="dragDrop">Drag&Drop</div>
 
-      <div className="totalAmount" >
-          <p>Total</p>
-          <h5>$15.49</h5>
+      <div className="totalAmount">
+        <p>Total</p>
+        <h5>$15.49</h5>
       </div>
 
-      <div onClick={()=> {}} className="checkoutButton">Checkout</div>
+      <div onClick={() => {}} className="checkoutButton">
+        <Link to="/checkout">Checkout</Link>
+      </div>
     </div>
   );
 }

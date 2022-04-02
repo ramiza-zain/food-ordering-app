@@ -100,6 +100,25 @@ function HomePage() {
       color: "#f5ed80",
     },
   ]);
+  const [selectedFoodList, setSelectedFoodList] = useState([]);
+  const onHeartClicked = (food, index) => {
+    debugger;
+    var list = foodsList;
+    var selectedList = selectedFoodList;
+    if (list[index].isSelected === false) {
+      list[index].isSelected = true;
+      list[index].quantity = 1;
+      selectedList.push(list[index]);
+    } else {
+      list[index].isSelected = false;
+      list[index].quantity = 0;
+      selectedList.pop(list[index]);
+    }
+    setFoodsList(list);
+    setSelectedFoodList(selectedList);
+  };
+
+  const onDeleteFood = (food, index) => {};
   return (
     <div className="container">
       <LeftMenu />
@@ -124,12 +143,19 @@ function HomePage() {
         <div className="foodsList">
           {foodsList.map((food, index) => {
             return (
-              <div className="listFoodItem" style={{ background: food.color }}>
+              <div
+                className="listFoodItem"
+                style={{ background: food.color }}
+                key={index}
+              >
                 <div className="ratingHeartContainer">
                   <div className="ratingContainer">
                     <AiFillStar color="#F1C40F" /> {food.rating}
                   </div>
-                  <div className="heartContainer">
+                  <div
+                    className="heartContainer"
+                    onClick={() => onHeartClicked(food, index)}
+                  >
                     {food.isSelected ? (
                       <AiFillHeart color="#d80b0b" width={20} height={20} />
                     ) : (
@@ -152,7 +178,10 @@ function HomePage() {
           })}
         </div>
       </div>
-      <RightMenu />
+      <RightMenu
+        selectedFoods={selectedFoodList}
+        onDeleteFood={(food, index) => onDeleteFood(food, index)}
+      />
     </div>
   );
 }
