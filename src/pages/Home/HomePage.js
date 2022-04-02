@@ -102,7 +102,7 @@ function HomePage() {
   ]);
   const [selectedFoodList, setSelectedFoodList] = useState([]);
   const onHeartClicked = (food, index) => {
-    debugger;
+    // debugger;
     var list = foodsList;
     var selectedList = selectedFoodList;
     if (list[index].isSelected === false) {
@@ -114,8 +114,8 @@ function HomePage() {
       list[index].quantity = 0;
       selectedList.pop(list[index]);
     }
-    setFoodsList(list);
-    setSelectedFoodList(selectedList);
+    setFoodsList([...list]);
+    setSelectedFoodList([...selectedList]);
   };
 
   const onDeleteFood = (food, index) => {};
@@ -141,7 +141,7 @@ function HomePage() {
 
         {/* Foods */}
         <div className="foodsList">
-          {foodsList.map((food, index) => {
+          {foodsList && foodsList.map((food, index) => {
             return (
               <div
                 className="listFoodItem"

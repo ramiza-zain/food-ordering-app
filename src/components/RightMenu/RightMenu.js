@@ -57,9 +57,7 @@ function RightMenu({ selectedFoods }) {
         <h5>$15.49</h5>
       </div>
 
-      <div onClick={() => {}} className="checkoutButton">
-        <Link to="/checkout">Checkout</Link>
-      </div>
+        <Link to="/checkout" className="checkoutButton">Checkout</Link>
     </div>
   );
 }
