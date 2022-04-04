@@ -5,6 +5,7 @@ import "./HomePage.css";
 import { BsFilter } from "react-icons/bs";
 import { BsChevronDown } from "react-icons/bs";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
+import { BiFoodMenu } from "react-icons/bi";
 
 function HomePage() {
   const [foodsList, setFoodsList] = useState([
@@ -118,10 +119,23 @@ function HomePage() {
     setSelectedFoodList([...selectedList]);
   };
 
-  const onDeleteFood = (food, index) => {};
+  const onDeleteFood = (food, index) => {
+    // debugger;
+    var selectedList = selectedFoodList;
+    const foodIndex = selectedList.indexOf(food);
+    if (foodIndex > -1) {
+      selectedList[foodIndex].isSelected = false;
+      selectedList[foodIndex].quantity = 0;
+      selectedList.splice(foodIndex, 1);
+    }
+    setSelectedFoodList([...selectedList]);
+  };
   return (
     <div className="container">
-      <LeftMenu />
+      <LeftMenu
+        icon={<BiFoodMenu width={20} height={20} color={"#3cc274"} />}
+        text={"MENU"}
+      />
       <div className="contentMenu">
         <div className="filterContainer">
           <div className="filterButton">
@@ -141,41 +155,42 @@ function HomePage() {
 
         {/* Foods */}
         <div className="foodsList">
-          {foodsList && foodsList.map((food, index) => {
-            return (
-              <div
-                className="listFoodItem"
-                style={{ background: food.color }}
-                key={index}
-              >
-                <div className="ratingHeartContainer">
-                  <div className="ratingContainer">
-                    <AiFillStar color="#F1C40F" /> {food.rating}
+          {foodsList &&
+            foodsList.map((food, index) => {
+              return (
+                <div
+                  className="listFoodItem"
+                  style={{ background: food.color }}
+                  key={index}
+                >
+                  <div className="ratingHeartContainer">
+                    <div className="ratingContainer">
+                      <AiFillStar color="#F1C40F" /> {food.rating}
+                    </div>
+                    <div
+                      className="heartContainer"
+                      onClick={() => onHeartClicked(food, index)}
+                    >
+                      {food.isSelected ? (
+                        <AiFillHeart color="#d80b0b" width={20} height={20} />
+                      ) : (
+                        <AiOutlineHeart color="#000" width={20} height={20} />
+                      )}
+                    </div>
                   </div>
-                  <div
-                    className="heartContainer"
-                    onClick={() => onHeartClicked(food, index)}
-                  >
-                    {food.isSelected ? (
-                      <AiFillHeart color="#d80b0b" width={20} height={20} />
-                    ) : (
-                      <AiOutlineHeart color="#000" width={20} height={20} />
-                    )}
+
+                  <div className="imageContainer">
+                    <img className="imageView" src={food.foodImage} />
                   </div>
-                </div>
 
-                <div className="imageContainer">
-                  <img className="imageView" src={food.foodImage} />
+                  <div className="nameWeightDiv">
+                    <p c>{food.foodName}</p>
+                    <span style={{ color: food.color }}>{food.weight}</span>
+                  </div>
+                  <div className="priceStyle">${food.price}</div>
                 </div>
-
-                <div className="nameWeightDiv">
-                  <p c>{food.foodName}</p>
-                  <span style={{ color: food.color }}>{food.weight}</span>
-                </div>
-                <div className="priceStyle">${food.price}</div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
       <RightMenu

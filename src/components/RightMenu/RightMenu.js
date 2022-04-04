@@ -3,7 +3,7 @@ import "./RightMenu.css";
 import { AiFillClockCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
-function RightMenu({ selectedFoods }) {
+function RightMenu({ selectedFoods, onDeleteFood }) {
   return (
     <div className="containerRight">
       <div className="titleContainer">
@@ -41,7 +41,12 @@ function RightMenu({ selectedFoods }) {
                   </div>
                   <div className="priceDiv">
                     <h5 className="price">${food.price}</h5>
-                    <div className="delete">x</div>
+                    <div
+                      onClick={() => onDeleteFood(food, index)}
+                      className="delete"
+                    >
+                      x
+                    </div>
                   </div>
                 </div>
               </div>
@@ -57,7 +62,15 @@ function RightMenu({ selectedFoods }) {
         <h5>$15.49</h5>
       </div>
 
-        <Link to="/checkout" className="checkoutButton">Checkout</Link>
+      <Link
+        to={{
+          pathname: "/checkout",
+          state: selectedFoods,
+        }}
+        className="checkoutButton"
+      >
+        Checkout
+      </Link>
     </div>
   );
 }
