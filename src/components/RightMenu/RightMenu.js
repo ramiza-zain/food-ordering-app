@@ -4,6 +4,8 @@ import { AiFillClockCircle } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 function RightMenu({ selectedFoods, onDeleteFood }) {
+  var totalAmount = selectedFoods.reduce((total, obj) => obj.price + total,0)
+
   return (
     <div className="containerRight">
       <div className="titleContainer">
@@ -59,7 +61,7 @@ function RightMenu({ selectedFoods, onDeleteFood }) {
 
       <div className="totalAmount">
         <p>Total</p>
-        <h5>$15.49</h5>
+        <h5>${totalAmount}</h5>
       </div>
 
       <Link
